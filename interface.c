@@ -1,7 +1,7 @@
 /* Leitura dos argumentos e apresentacao dos metadados.
  * Alunos: Thiago Wyse e Matheus Souza.
  */
-#include "minifs.h"
+#include "sistema_arquivos.h"
 #include <ctype.h>
 #include <errno.h>
 #include <stdlib.h>

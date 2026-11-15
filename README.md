@@ -17,14 +17,14 @@ são descartados. O programa não executa comandos do sistema hospedeiro.
 Requisitos: GCC com suporte a C11. No Linux, WSL ou terminal com GCC:
 
 ```sh
-gcc -std=c11 -Wall -Wextra -Wpedantic -O2 main.c minifs.c permissoes.c caminhos.c armazenamento.c interface.c comandos.c -o minifs
+gcc -std=c11 -Wall -Wextra -Wpedantic -O2 principal.c sistema_arquivos.c permissoes.c caminhos.c armazenamento.c interface.c comandos.c -o minifs
 ./minifs
 ```
 
 No Windows/PowerShell com MinGW:
 
 ```powershell
-gcc -std=c11 -Wall -Wextra -Wpedantic -O2 main.c minifs.c permissoes.c caminhos.c armazenamento.c interface.c comandos.c -o minifs.exe
+gcc -std=c11 -Wall -Wextra -Wpedantic -O2 principal.c sistema_arquivos.c permissoes.c caminhos.c armazenamento.c interface.c comandos.c -o minifs.exe
 .\minifs.exe
 ```
 
@@ -117,9 +117,9 @@ pipelines ou comandos do shell. Para nomes com barra invertida, duplique-a.
 
 | Arquivo | Responsabilidade |
 |---|---|
-| `minifs.h` | Constantes, tipos, FCB e declarações das funções compartilhadas. |
-| `main.c` | Inicializa a raiz, lê comandos e libera a memória ao encerrar. |
-| `minifs.c` | Mantém o estado da simulação e cria, busca, desliga e libera entradas do array. |
+| `sistema_arquivos.h` | Constantes, tipos, FCB e declarações das funções compartilhadas. |
+| `principal.c` | Inicializa a raiz, lê comandos e libera a memória ao encerrar. |
+| `sistema_arquivos.c` | Mantém o estado da simulação e cria, busca, desliga e libera entradas do array. |
 | `permissoes.c` | Seleciona proprietário/grupo/outros e verifica os bits RWX. |
 | `caminhos.c` | Valida nomes e resolve caminhos e destinos de cópia/movimentação. |
 | `armazenamento.c` | Mantém o disco e o mapa de ocupação privados e lê/escreve os blocos. |
@@ -128,8 +128,8 @@ pipelines ou comandos do shell. Para nomes com barra invertida, duplique-a.
 | `Makefile` | Compila todos os módulos e oferece o alvo `clean`. |
 
 O cabeçalho usa uma guarda de inclusão para evitar declarações duplicadas.
-As variáveis compartilhadas são declaradas com `extern` em `minifs.h` e definidas
-uma única vez em `minifs.c`. Funções auxiliares usadas somente dentro de um módulo
+As variáveis compartilhadas são declaradas com `extern` em `sistema_arquivos.h` e definidas
+uma única vez em `sistema_arquivos.c`. Funções auxiliares usadas somente dentro de um módulo
 continuam `static`. O disco e seu mapa de ocupação ficam privados em
 `armazenamento.c`; os outros módulos acessam o conteúdo pelas funções de leitura
 e escrita. Todos os arquivos C devem ser compilados juntos.

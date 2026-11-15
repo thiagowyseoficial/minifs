@@ -1,10 +1,10 @@
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -O2
-SOURCES = main.c minifs.c permissoes.c caminhos.c armazenamento.c interface.c comandos.c
+SOURCES = principal.c sistema_arquivos.c permissoes.c caminhos.c armazenamento.c interface.c comandos.c
 
 all: minifs
 
-minifs: $(SOURCES) minifs.h
+minifs: $(SOURCES) sistema_arquivos.h
 	$(CC) $(CFLAGS) $(SOURCES) -o minifs
 
 clean:

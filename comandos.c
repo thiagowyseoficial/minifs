@@ -1,7 +1,7 @@
 /* Operacoes do usuario e selecao dos comandos.
  * Alunos: Thiago Wyse e Matheus Souza.
  */
-#include "minifs.h"
+#include "sistema_arquivos.h"
 #include <string.h>
 
 /* Pontos finais identificam navegacao, nao uma entrada que possa ser removida/movida. */

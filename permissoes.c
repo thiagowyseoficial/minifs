@@ -1,7 +1,7 @@
 /* Selecao da classe de usuario e verificacao dos bits RWX.
  * Alunos: Thiago Wyse e Matheus Souza.
  */
-#include "minifs.h"
+#include "sistema_arquivos.h"
 
 /* Seleciona somente uma classe: proprietario, grupo ou outros. */
 static int has_permission(const FCB *node, unsigned bits)

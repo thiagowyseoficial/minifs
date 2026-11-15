@@ -1,7 +1,7 @@
 /* Estado do sistema e gerenciamento da tabela de FCBs.
  * Alunos: Thiago Wyse e Matheus Souza.
  */
-#include "minifs.h"
+#include "sistema_arquivos.h"
 #include <string.h>
 
 FCB *root = NULL;

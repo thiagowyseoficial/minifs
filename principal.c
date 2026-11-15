@@ -1,7 +1,7 @@
 /* Inicializacao, leitura de linhas e encerramento.
  * Alunos: Thiago Wyse e Matheus Souza.
  */
-#include "minifs.h"
+#include "sistema_arquivos.h"
 #include <stdlib.h>
 #include <string.h>
 

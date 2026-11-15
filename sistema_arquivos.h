@@ -1,5 +1,5 @@
-#ifndef MINIFS_H
-#define MINIFS_H
+#ifndef SISTEMA_ARQUIVOS_H
+#define SISTEMA_ARQUIVOS_H
 
 #include <stddef.h>
 #include <stdio.h>
@@ -44,7 +44,7 @@ typedef struct FCB
     int parent_index; /* Indice do pai; -1 para raiz ou entrada desligada. */
 } FCB;
 
-/* Estado unico da simulacao, definido em minifs.c. */
+/* Estado unico da simulacao, definido em sistema_arquivos.c. */
 extern FCB *root;
 extern FCB *current_directory;
 extern unsigned uid;
@@ -52,7 +52,7 @@ extern unsigned gid;
 extern int command_failed;
 extern const char *type_names[];
 
-/* minifs.c: Estado do sistema e gerenciamento da tabela de FCBs. */
+/* sistema_arquivos.c: Estado do sistema e gerenciamento da tabela de FCBs. */
 int show_error(const char *message);
 FCB *find_child(FCB *parent, const char *name);
 FCB *create_node(FCB *parent, const char *name, FileType type, unsigned mode);

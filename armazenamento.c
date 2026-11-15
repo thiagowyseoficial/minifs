@@ -1,7 +1,7 @@
 /* Disco simulado, mapa de ocupacao e alocacao indexada.
  * Alunos: Thiago Wyse e Matheus Souza.
  */
-#include "minifs.h"
+#include "sistema_arquivos.h"
 #include <string.h>
 
 /* Apenas este modulo acessa diretamente os blocos fisicos. */
