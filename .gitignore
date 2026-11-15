@@ -1,0 +1,15 @@
+# Executaveis e arquivos de compilacao
+minifs
+*.exe
+*.o
+*.obj
+*.pdb
+*.ilk
+
+# Configuracoes locais de editores
+.vscode/
+.idea/
+
+# Caches de ferramentas
+.zig-cache/
+zig-out/
